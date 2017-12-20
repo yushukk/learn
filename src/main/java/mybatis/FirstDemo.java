@@ -1,13 +1,16 @@
 package mybatis;
 
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.Environment;
 import org.apache.ibatis.mapping.MappedStatement;
+import org.apache.ibatis.reflection.MetaObject;
 import org.apache.ibatis.session.*;
 import org.apache.ibatis.transaction.Transaction;
 import org.apache.ibatis.transaction.TransactionFactory;
+import org.erik.PersonMapper;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,25 +28,32 @@ public class FirstDemo {
         //´´½¨SqlSession
         SqlSession session = sqlSessionFactory.openSession();
         try {
-            Person person = (Person) session.selectOne("org.erik.PersonMapper.selectBlog", 2);
+            //Person person = (Person) session.selectOne("org.erik.PersonMapper.selectBlog", 2);
+            PersonMapper mapper = session.getMapper(PersonMapper.class);
+            Person person = mapper.selectBlog(2,"123");
+
             System.out.println(person.getName());
         } finally {
             session.close();
         }
 
-        Configuration configuration = sqlSessionFactory.getConfiguration();
+        /*Configuration configuration = sqlSessionFactory.getConfiguration();
         MappedStatement mappedStatement = configuration.getMappedStatement("org.erik.PersonMapper.selectBlog");
         BoundSql boundSql = mappedStatement.getBoundSql(2);
+        MetaObject metaObject = MetaObject.forObject(boundSql,configuration.getObjectFactory(),configuration.getObjectWrapperFactory());
+        metaObject.setValue("sql","select");
+
+
 
 
         Environment environment = configuration.getEnvironment();
         TransactionFactory transactionFactory = environment.getTransactionFactory();
         Transaction tx = transactionFactory.newTransaction(environment.getDataSource(), null, false);
         Executor executor = configuration.newExecutor(tx);
-        List<Person> persons = executor.query(mappedStatement, 2, RowBounds.DEFAULT, Executor.NO_RESULT_HANDLER);
+        List<Person> persons = executor.query(mappedStatement, 2, RowBounds.DEFAULT, Executor.NO_RESULT_HANDLER);*/
 
 
-        System.out.println(boundSql.getSql());
+        //System.out.println(boundSql.getSql());
 
     }
 }

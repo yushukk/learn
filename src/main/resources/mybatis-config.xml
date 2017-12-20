@@ -15,6 +15,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="org/erik/PersonMapper.xml"/>
+        <!--<mapper resource="org/erik/PersonMapper.xml"/>-->
+        <package name="org.erik"/>
     </mappers>
 </configuration>

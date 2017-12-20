@@ -31,7 +31,6 @@ public class BookFacadeCglib implements MethodInterceptor {
         return enhancer.create();
     }
 
-    @Override
     // 回调方法
     public Object intercept(Object obj, Method method, Object[] args,
                             MethodProxy proxy) throws Throwable {

@@ -8,6 +8,12 @@
     <artifactId>learn</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <tables.version>blink-1.3-SNAPSHOT</tables.version>
+        <runtime.version>blink-1.3-SNAPSHOT</runtime.version>
+        <scala.binary.version>2.11</scala.binary.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.mybatis</groupId>
@@ -19,11 +25,7 @@
             <artifactId>cglib</artifactId>
             <version>3.1</version>
         </dependency>
-        <dependency>
-            <groupId>com.alibaba.citrus</groupId>
-            <artifactId>citrus-webx-all</artifactId>
-            <version>3.2.2</version>
-        </dependency>
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -34,6 +36,66 @@
             <artifactId>logback-classic</artifactId>
             <version>1.1.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.3.8.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>weka</groupId>
+            <artifactId>weka</artifactId>
+            <version>3.7.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>alihb-sql</artifactId>
+            <version>1.4.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cdo</groupId>
+            <artifactId>timetunnel-clientng</artifactId>
+            <version>0.5.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>2.10.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.dxp.app</groupId>
+            <artifactId>galaxy.sdk</artifactId>
+            <version>1.4.4-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.blink</groupId>
+            <artifactId>blink-connector-custom</artifactId>
+            <version>${tables.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-streaming-scala_${scala.binary.version}</artifactId>
+            <version>${runtime.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.tmall.tpp</groupId>
+            <artifactId>tpp-common-utils</artifactId>
+            <version>1.1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 </project>
