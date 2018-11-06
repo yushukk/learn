@@ -27,7 +27,7 @@ public class Main {
 
         try {
             classLoader.addJar(new File("D:\\code\\shaxiang_4\\freemall\\freemall-common\\target\\freemall-common-1.2.0-SNAPSHOT.jar").toURI().toURL());
-            Class<?> clazz = classLoader.loadClass("com.tmall.freemall.common.shop.point.SyncShopPoint");
+            Class<?> clazz = classLoader.loadClass("shop.point.SyncShopPoint");
             Method method = clazz.getMethods()[0];
             Type[] genericParameterTypes = method.getGenericParameterTypes();
             Type genericParameterType = genericParameterTypes[1];
