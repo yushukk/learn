@@ -14,6 +14,7 @@ public class TestCglib {
 
     public static void main(String[] args) {
         BookFacadeCglib cglib=new BookFacadeCglib();
+        // ´úÀí
         BookFacadeImpl bookCglib=(BookFacadeImpl)cglib.getInstance(new BookFacadeImpl());
         List<Book> bookList = new ArrayList<Book>();
         bookCglib.addBook(bookList);
@@ -24,6 +25,8 @@ public class TestCglib {
                 System.out.println(aClass.getName());
             }
         }
+
+        // class.method(params)  return
 
     }
 }

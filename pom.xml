@@ -7,11 +7,25 @@
     <groupId>com.skycat.erik</groupId>
     <artifactId>learn</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <properties>
         <tables.version>blink-1.3-SNAPSHOT</tables.version>
         <runtime.version>blink-1.3-SNAPSHOT</runtime.version>
         <scala.binary.version>2.11</scala.binary.version>
+        <odps.version>0.30.1</odps.version>
+
     </properties>
 
     <dependencies>
@@ -69,26 +83,13 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>2.10.0</version>
+            <version>3.0.0</version>
         </dependency>
 
         <dependency>
             <groupId>com.alibaba.dxp.app</groupId>
             <artifactId>galaxy.sdk</artifactId>
             <version>1.4.4-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.alibaba.blink</groupId>
-            <artifactId>blink-connector-custom</artifactId>
-            <version>${tables.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-streaming-scala_${scala.binary.version}</artifactId>
-            <version>${runtime.version}</version>
-            <scope>provided</scope>
         </dependency>
 
 
